@@ -1,0 +1,70 @@
+import pgzrun
+import random
+HEIGHT=600
+WIDTH=700
+TITLE="bee"
+bee=Actor("bee")
+flower=Actor("flower")
+flower.pos=(350,300)
+def draw():
+    screen.clear()
+    screen.fill("white")
+    bee.draw()
+    flower.draw()
+def on_key_down(key):
+    if key==keys.W:
+        bee.y=bee.y-10
+    if key==keys.S:
+        bee.y=bee.y+10
+    if key==keys.A:
+        bee.x=bee.x-10
+    if key==keys.D:
+        bee.x=bee.x+10
+    if bee.colliderect(flower):
+        x=random.randint(0,700)
+        y=random.randint(0,600)
+        flower.pos=(x,y)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+def update():
+    pass
+pgzrun.go()
